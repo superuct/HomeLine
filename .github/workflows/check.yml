@@ -1,0 +1,17 @@
+name: Check portable services
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  services:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: nas/nas/webrtc-voice/go.mod
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: ./scripts/test.sh
+      - run: ./scripts/build-media.sh

@@ -1,0 +1,17 @@
+[Unit]
+Description=SakuraFrp client for HomeLine
+Wants=network-online.target homeline-sakurafrp-gateway.service
+After=network-online.target homeline-sakurafrp-gateway.service
+
+[Service]
+Type=exec
+User=homeline-frp
+WorkingDirectory=/var/lib/homeline-sakurafrp
+ExecStart=/opt/homeline-nas/bin/frpc -n --disable_log_color -c /var/lib/homeline-sakurafrp/frpc.ini
+Restart=always
+RestartSec=5
+UMask=0077
+NoNewPrivileges=yes
+
+[Install]
+WantedBy=multi-user.target

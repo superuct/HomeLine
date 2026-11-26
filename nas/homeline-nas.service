@@ -1,0 +1,19 @@
+[Unit]
+Description=HomeLine EC20 AT and WebRTC
+Wants=network-online.target
+After=network-online.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=exec
+EnvironmentFile=/etc/homeline-nas/service.env
+UMask=0077
+ExecStart=/bin/sh /opt/homeline-nas/launch.sh
+ExecStopPost=/bin/sh /opt/homeline-nas/launch.sh restore
+Restart=on-failure
+RestartSec=10
+TimeoutStopSec=40
+NoNewPrivileges=yes
+
+[Install]
+WantedBy=multi-user.target

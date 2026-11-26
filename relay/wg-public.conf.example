@@ -1,0 +1,8 @@
+[Interface]
+Address = 10.70.0.1/30
+ListenPort = 51820
+PrivateKey = <relay-private-key>
+
+[Peer]
+PublicKey = <nas-public-key>
+AllowedIPs = 10.70.0.2/32

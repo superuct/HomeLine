@@ -1,0 +1,18 @@
+[Unit]
+Description=HomeLine public TCP and UDP relay
+Requires=wg-quick@homeline.service
+After=network-online.target wg-quick@homeline.service
+
+[Service]
+EnvironmentFile=/etc/homeline-relay/relay.env
+ExecStart=/usr/bin/python3 /opt/homeline-relay/relay.py --bind ${BIND} --nas ${NAS} --port ${PORT} --target-port ${TARGET_PORT} --rtp ${ICE_PORT} ${ICE_PORT}
+DynamicUser=yes
+NoNewPrivileges=yes
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+ProtectSystem=strict
+ProtectHome=true
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

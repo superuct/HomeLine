@@ -1,0 +1,9 @@
+[Interface]
+Address = 10.70.0.2/30
+PrivateKey = <nas-private-key>
+
+[Peer]
+PublicKey = <relay-public-key>
+Endpoint = 203.0.113.10:51820
+AllowedIPs = 10.70.0.1/32
+PersistentKeepalive = 25
