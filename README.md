@@ -59,4 +59,4 @@ Apple 推送依赖证书、App 签名环境和系统通知权限。专注模式�
 
 运行 `./scripts/test.sh` 验证 Go、Python 服务。iOS 和模拟串口联调见验收文档。可移植服务的 GitHub Actions 配置已附在 .github/workflows/check.yml。
 
-自有代码使用 [MIT](LICENSE)，第三方组件说明见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。本目录为本地开源预览，具体验证范围记在 [VALIDATION.md](docs/VALIDATION.md)。
+自有代码使用 [MIT](LICENSE)，第三方组件说明见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。当前版本为 0.7.14，具体验证范围记在 [VALIDATION.md](docs/VALIDATION.md)。
